@@ -1,18 +1,20 @@
 'use strict';
 
-function Point(x, y) {
-  this.x = x;
-  this.y = y;
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    move(x, y) {
+        this.x += x;
+        this.y += y;
+    }
+    toString() {
+        return `[${this.x}, ${this.y}]`;
+    }
 }
 
-Point.prototype.move = function(x, y) {
-  this.x += x;
-  this.y += y;
-};
 
-Point.prototype.toString = function() {
-  return `[${this.x}, ${this.y}]`;
-};
 
 console.log('function prototype:', (function() {}).prototype);
 console.log('lambda prototype:', (() => {}).prototype);
